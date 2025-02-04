@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&family=Poiret+One&family=Quicksand:wght@300..700&display=swap');
+
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lexend-<uniquifier> {
+  font-family: "Lexend", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.quicksand-<uniquifier> {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+.jost-<uniquifier> {
+  font-family: "Jost", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+/* Modern scrollbar design */
+::-webkit-scrollbar {
+  width: 11px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f6; /* Color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C3C4C8; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid #f8f8f6; /* Padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #575965; /* Color of the thumb on hover */
+}
+
+body {
+  font-family: "Quicksand", serif;
+  background-color: #F8F8F6;
+}
+
+header {
+  position: sticky;
+  top: 1rem;
+  z-index: 1000; /* Ensure the header stays above other content */
+}
+
+header.sticky {
+  padding-bottom: 0.2rem;
+}
+
+header.sticky .navbar {
+  background-color: #33363d; /* Add background color */
+}
+
+header.sticky .logo a {
+  color: #f8f8f6; /* Change logo text color */
+}
+
+header.sticky .nav-links a {
+  color: #f8f8f6; /* Change link text color */
+}
+
+.navbar {
+  margin: 1rem 3rem;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.logo a {
+  color: #33363d;
+  font-size: 1.7rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 3rem; /* Adds space between each link */
+}
+
+.nav-links li {
+  margin-left: 0; /* Remove the old margin-left */
+}
+
+.nav-links a {
+  color: #33363d;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    gap: 0; /* Reset gap for mobile */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* About Section */
+.about-section {
+  padding: 2.5rem 2rem;
+  background-color: #F8F8F6;
+  height: auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 625px;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: #33363D;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #575965;
+  margin-bottom: 2rem;
+}
+
+.about-text .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #d6826e;
+  color: #f8f8f6;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 0.01rem solid #d6826e;
+  transition: background-color 0.3s ease;
+}
+
+.about-text .btn:hover {
+  background-color: #b86058;
+  border: 0.01rem solid #b86058;
+}
+
+.about-text .btn-noFill {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #f8f8f6;
+  color: #d6826e;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 0.01rem solid #d6826e;
+  transition: background-color 0.3s ease;
+}
+
+.about-text .btn-noFill:hover {
+  background-color: #b86058;
+  border: 0.01rem solid #b86058;
+  color: #f8f8f6;
+}
+
+.about-image img {
+  max-width: 550px;
+}
+
+/* Responsive Styles for About Section */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    margin-bottom: 2rem;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+}

@@ -239,3 +239,47 @@ header.sticky .nav-links a {
     max-width: 100%;
   }
 }
+
+.footer{
+  background-color: #33363d;
+  padding: 50px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-col{
+  width: 100%;
+  align-items: center;
+}
+
+.footer-col h4, .footer-col h3{
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-col .social-links{
+  align-items: center;
+  text-align: center;
+}
+
+.footer-col .social-links a{
+  display: inline-block;  
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0px 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #fff;
+}

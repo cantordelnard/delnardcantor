@@ -7,6 +7,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --pureWhite: #FFFFFF;
+  --white: #F8F8F6;
+  --blackMain: #33363d;
+  --blackSub: #575965;
+  --redStock: #d6826e;
+  --redHighlight: #b86058;
+  --grayStock: #C3C4C8;
+  --grayHighlight: #575965;
+
+}
+
 .lexend-<uniquifier> {
   font-family: "Lexend", serif;
   font-optical-sizing: auto;
@@ -35,23 +47,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8f8f6; /* Color of the track */
+  background: var(--white); /* Color of the track */
   border-radius: 10px; /* Rounded corners for the track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C3C4C8; /* Color of the scrollbar thumb */
+  background: var(--grayStock); /* Color of the scrollbar thumb */
   border-radius: 10px; /* Rounded corners for the thumb */
-  border: 3px solid #f8f8f6; /* Padding around the thumb */
+  border: 3px solid var(--white); /* Padding around the thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #575965; /* Color of the thumb on hover */
+  background: var(--grayHighlight); /* Color of the thumb on hover */
 }
 
 body {
   font-family: "Quicksand", serif;
-  background-color: #F8F8F6;
+  background-color: var(--white);
 }
 
 header {
@@ -65,15 +77,15 @@ header.sticky {
 }
 
 header.sticky .navbar {
-  background-color: #33363d; /* Add background color */
+  background-color: var(--blackMain); /* Add background color */
 }
 
 header.sticky .logo a {
-  color: #f8f8f6; /* Change logo text color */
+  color: var(--white); /* Change logo text color */
 }
 
 header.sticky .nav-links a {
-  color: #f8f8f6; /* Change link text color */
+  color: var(--white); /* Change link text color */
 }
 
 .navbar {
@@ -87,7 +99,7 @@ header.sticky .nav-links a {
 }
 
 .logo a {
-  color: #33363d;
+  color: var(--blackMain);
   font-size: 1.7rem;
   text-decoration: none;
   font-weight: bold;
@@ -105,7 +117,7 @@ header.sticky .nav-links a {
 }
 
 .nav-links a {
-  color: #33363d;
+  color: var(--blackMain);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -113,7 +125,7 @@ header.sticky .nav-links a {
 }
 
 .nav-links a:hover {
-  color: #f39c12;
+  color: var(--redHighlight);
 }
 
 .menu-toggle {
@@ -125,7 +137,7 @@ header.sticky .nav-links a {
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 4px 0;
   transition: all 0.3s ease;
 }
@@ -136,7 +148,7 @@ header.sticky .nav-links a {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #333;
+    background-color: var(--blackMain);
     gap: 0; /* Reset gap for mobile */
   }
 
@@ -157,7 +169,7 @@ header.sticky .nav-links a {
 /* About Section */
 .about-section {
   padding: 2.5rem 2rem;
-  background-color: #F8F8F6;
+  background-color: var(--white);
   height: auto;
 }
 
@@ -177,47 +189,47 @@ header.sticky .nav-links a {
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
-  color: #33363D;
+  color: var(--blackMain);
 }
 
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #575965;
+  color: var(--blackSub);
   margin-bottom: 2rem;
 }
 
 .about-text .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background-color: #d6826e;
-  color: #f8f8f6;
+  background-color: var(--redStock);
+  color: var(--white);
   text-decoration: none;
   border-radius: 5px;
-  border: 0.01rem solid #d6826e;
+  border: 0.01rem solid var(--redStock);
   transition: background-color 0.3s ease;
 }
 
 .about-text .btn:hover {
-  background-color: #b86058;
-  border: 0.01rem solid #b86058;
+  background-color: var(--redHighlight);
+  border: 0.01rem solid var(--redHighlight);
 }
 
 .about-text .btn-noFill {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background-color: #f8f8f6;
-  color: #d6826e;
+  background-color: var(--white);
+  color: var(--redStock);
   text-decoration: none;
   border-radius: 5px;
-  border: 0.01rem solid #d6826e;
+  border: 0.01rem solid var(--redStock);
   transition: background-color 0.3s ease;
 }
 
 .about-text .btn-noFill:hover {
-  background-color: #b86058;
-  border: 0.01rem solid #b86058;
-  color: #f8f8f6;
+  background-color: var(--redHighlight);
+  border: 0.01rem solid var(--redHighlight);
+  color: var(--white);
 }
 
 .about-image img {
@@ -240,8 +252,53 @@ header.sticky .nav-links a {
   }
 }
 
+/* Skills Section */
+#skills {
+  padding: 6rem 2rem 7rem 2rem;
+  text-align: center;
+  /*background-color: var(--pureWhite);*/
+  background: url('../images/skillsBackground.svg'); /* Add your image path here */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+}
+
+#skills h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 0.8rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 0.9rem;
+  color: var(--blackSub);
+  margin: 0;
+}
+
+/* Hover Effects */
+.skill-box:hover {
+  /*transform: translateY(-5px);*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .footer{
-  background-color: #33363d;
+  background-color: var(--blackMain);
   padding: 50px 0;
   justify-content: center;
   align-items: center;
@@ -255,7 +312,7 @@ header.sticky .nav-links a {
 .footer-col h4, .footer-col h3{
   font-size: 1rem;
   font-weight: 300;
-  color: #fff;
+  color: var(--white);
   text-transform: capitalize;
   text-align: center;
   padding: 2rem;
@@ -275,11 +332,11 @@ header.sticky .nav-links a {
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color: #fff;
+  color: var(--white);
   transition: all 0.5s ease;
 }
 
 .footer-col .social-links a:hover{
-  color: #24262b;
-  background-color: #fff;
+  color: var(--blackMain);
+  background-color: var(--white);
 }

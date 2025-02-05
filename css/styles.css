@@ -88,6 +88,10 @@ header.sticky .nav-links a {
   color: var(--white); /* Change link text color */
 }
 
+header.sticky .nav-links a:hover {
+  color: var(--redStock);
+}
+
 .navbar {
   margin: 1rem 3rem;
   border-radius: 3rem;
@@ -137,13 +141,27 @@ header.sticky .nav-links a {
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--white);
+  background-color: var(--grayStock);
   margin: 4px 0;
   transition: all 0.3s ease;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .navbar {
+    margin: 1rem 1rem;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -243,6 +261,13 @@ header.sticky .nav-links a {
     text-align: center;
   }
 
+  .about-text h1 {
+    font-size: 2.7rem;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
+
   .about-text {
     margin-bottom: 2rem;
   }
@@ -256,8 +281,8 @@ header.sticky .nav-links a {
 #skills {
   padding: 6rem 2rem 7rem 2rem;
   text-align: center;
-  /*background-color: var(--pureWhite);*/
-  background: url('../images/skillsBackground.svg'); /* Add your image path here */
+  background-color: var(--pureWhite);
+  background: url('../images/whiteGrid.svg'); /* Add your image path here */
   background-size: cover; /* Ensures the image covers the entire section */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat;
@@ -285,7 +310,7 @@ header.sticky .nav-links a {
   border: 1px dashed var(--grayStock);
   border-radius: 0.5rem;
   padding: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 1s ease-in-out 1s;
   font-size: 0.9rem;
   color: var(--blackSub);
   margin: 0;
@@ -296,7 +321,117 @@ header.sticky .nav-links a {
   /*transform: translateY(-5px);*/
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--blackMain);
+  border: 1px solid var(--redStock);
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+/* Experience Section */
+#experience {
+  padding: 6rem 2rem 6rem 2rem;
+  background-color: var(--white);
+  text-align: center;
+}
+
+#experience h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.experience-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0.1rem;
+  background-color: var(--redStock);
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 2rem;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: url('../images/bullets.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid var(--redStock);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.experience-content {
+  background-color: var(--pureWhite);
+  background: url('../images/whiteGrid.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.experience-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--blackMain);
+}
+
+.experience-content .company {
+  font-size: 1rem;
+  color: var(--blackMain);
+  margin-bottom: 0.2rem;
+}
+
+.experience-content .experience-date {
+  font-size: 0.9rem;
+  color: var(--blackMain);
+  margin-bottom: 1rem;
+}
+
+.experience-content ul {
+  list-style: none;
+  
+}
+
+.experience-content li {
+  font-size: 0.9rem;
+  color: var(--blackSub);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 1rem;
+  }
+
+  .experience-item {
+    padding-left: 1rem;
+  }
+
+  .experience-item::before {
+    left: -6px;
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .footer{

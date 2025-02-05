@@ -319,7 +319,7 @@ header.sticky .nav-links a:hover {
 /* Hover Effects */
 .skill-box:hover {
   /*transform: translateY(-5px);*/
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   color: var(--blackMain);
   border: 1px solid var(--redStock);
   transition: all 0.1s ease-in-out 0.1s;
@@ -327,7 +327,7 @@ header.sticky .nav-links a:hover {
 
 /* Experience Section */
 #experience {
-  padding: 6rem 2rem 6rem 2rem;
+  padding: 5rem 2rem 0rem 2rem;
   background-color: var(--white);
   text-align: center;
 }
@@ -367,10 +367,7 @@ header.sticky .nav-links a:hover {
   left: -8px;
   width: 16px;
   height: 16px;
-  background: url('../images/bullets.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--redStock);
   border: 2px solid var(--redStock);
   border-radius: 50%;
   z-index: 2;
@@ -385,7 +382,13 @@ header.sticky .nav-links a:hover {
   border: 1px solid var(--grayStock);
   border-radius: 0.5rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+.experience-content:hover {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease-in-out 0.1s;
 }
 
 .experience-content h3 {
@@ -431,6 +434,85 @@ header.sticky .nav-links a:hover {
     left: -6px;
     width: 12px;
     height: 12px;
+  }
+}
+
+/* Projects Section */
+#projects {
+  padding: 5rem 2rem;
+  background-color: var(--white);
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: var(--pureWhite);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+  color: var(--blackMain);
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: var(--blackSub);
+  margin-bottom: 1rem;
+}
+
+.project-tools {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool-box {
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--grayHighlight);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 

@@ -530,6 +530,55 @@ header.sticky .nav-links a:hover {
   color: var(--blackMain);
 }
 
+/* Contact Section */
+#maintenance {
+  padding: 10rem 2rem 0rem 2rem;
+  background-color: var(--white);
+  text-align: center;
+  height: 100vh;
+}
+
+#maintenance h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--redHighlight);
+}
+
+#maintenance h2 {
+  font-size: 1.2rem;
+  font-weight: 350;
+  margin-bottom: 0.3rem;
+  color: var(--grayHighlight);
+}
+
+#maintenance .maintenance-bold {
+  font-weight: 500;
+}
+
+#maintenance .maintenance-space {
+  margin-top: 20rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  #maintenance h1 {
+  font-size: 2.5rem;
+}
+
+#maintenance h2 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--grayHighlight);
+}
+
+#maintenance .maintenance-space {
+  margin-top: 20rem;
+  font-size: 0.9rem;
+}
+}
+
 .footer{
   background-color: var(--blackMain);
   padding: 50px 0;

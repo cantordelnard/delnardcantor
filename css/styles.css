@@ -521,13 +521,160 @@ header.sticky .nav-links a:hover {
   padding: 5rem 2rem 0rem 2rem;
   background-color: var(--pureWhite);
   text-align: center;
-  height: 50vh;
+  height: auto;
+  padding-bottom: 1.5rem;
 }
 
 #contact h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: var(--blackMain);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--blackMain);
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: var(--blackSub);
+  margin-bottom: 1rem;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  font-size: 1rem;
+  color: var(--blackSub);
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--blackMain);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  color: var(--grayStock);
+}
+
+/* Form Styles */
+.name-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name-group input {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+.name-group input::placeholder,
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--blackSub);
+  opacity: 0.7;
+}
+
+.name-group input:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--redStock);
+  outline: none;
+}
+
+.submit-btn {
+  background-color: var(--redStock);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--redHighlight);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .name-group {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
 }
 
 /* Contact Section */
@@ -621,4 +768,25 @@ header.sticky .nav-links a:hover {
 .footer-col .social-links a:hover{
   color: var(--blackMain);
   background-color: var(--white);
+}
+
+#box {
+  height: 50vh;
+  background-color: var(--pureWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box .wrapper {
+  background-color: var(--redStock);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#box .wrapper:hover{
+  background-color: var(--redHighlight);
 }

@@ -296,7 +296,7 @@ header.sticky .nav-links a:hover {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.8rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -309,10 +309,10 @@ header.sticky .nav-links a:hover {
   background-color: var(--white);
   border: 1px dashed var(--grayStock);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1.2rem;
   transition: all 1s ease-in-out 1s;
   font-size: 0.9rem;
-  color: var(--blackSub);
+  color: var(--blackMain);
   margin: 0;
 }
 
@@ -364,7 +364,7 @@ header.sticky .nav-links a:hover {
   content: '';
   position: absolute;
   top: 20px;
-  left: -8px;
+  left: -10px;
   width: 16px;
   height: 16px;
   background-color: var(--redStock);
@@ -381,7 +381,7 @@ header.sticky .nav-links a:hover {
   background-repeat: no-repeat;
   border: 1px solid var(--grayStock);
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 3rem;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.1s ease-in-out 0.1s;
 }
@@ -420,6 +420,10 @@ header.sticky .nav-links a:hover {
   margin-bottom: 0.5rem;
 }
 
+.lineHeightExp {
+  line-height: 1.5rem;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .experience-timeline {
@@ -452,7 +456,7 @@ header.sticky .nav-links a:hover {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;

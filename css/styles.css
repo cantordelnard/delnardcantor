@@ -327,7 +327,7 @@ header.sticky .nav-links a:hover {
 
 /* Experience Section */
 #experience {
-  padding: 5rem 2rem 0rem 2rem;
+  padding: 5rem 2rem;
   background-color: var(--white);
   text-align: center;
 }
@@ -338,90 +338,138 @@ header.sticky .nav-links a:hover {
   color: var(--blackMain);
 }
 
-.experience-timeline {
-  position: relative;
+.experience-container {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.experience-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0.1rem;
-  background-color: var(--redStock);
-}
-
-.experience-item {
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 2rem;
-}
-
-.experience-item::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  width: 16px;
-  height: 16px;
-  background-color: var(--redStock);
-  border: 2px solid var(--redStock);
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.experience-content {
+.experience-card {
   background-color: var(--pureWhite);
-  background: url('../images/whiteGrid.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border: 1px solid var(--grayStock);
   border-radius: 0.5rem;
-  padding: 3rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s ease-in-out 0.1s;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
 }
 
-.experience-content:hover {
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s ease-in-out 0.1s;
+.experience-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.experience-content h3 {
+.company-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.company-logo img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.experience-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
   color: var(--blackMain);
+  margin: 0 0 0.3rem 0;
+  font-weight: 600;
 }
 
-.experience-content .company {
+.company {
+  color: var(--blackMain);
   font-size: 1rem;
-  color: var(--blackMain);
-  margin-bottom: 0.2rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
 }
 
-.experience-content .experience-date {
-  font-size: 0.9rem;
-  color: var(--blackMain);
-  margin-bottom: 1rem;
-}
-
-.experience-content ul {
-  list-style: none;
-  
-}
-
-.experience-content li {
-  font-size: 0.9rem;
+.experience-date {
   color: var(--blackSub);
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
 }
 
-.lineHeightExp {
-  line-height: 1.5rem;
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--blackSub);
+  background-color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  border: 1px solid var(--grayStock);
+}
+
+.meta-item i {
+  color: var(--redStock);
+  font-size: 0.8rem;
+}
+
+.experience-description {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--grayStock);
+}
+
+.experience-description ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--blackSub);
+}
+
+.experience-description li:before {
+  content: "•";
+  color: var(--redStock);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .company-logo {
+    margin: 0 auto;
+  }
+  
+  .experience-meta {
+    gap: 0.6rem;
+  }
 }
 
 /* Responsive Styles */

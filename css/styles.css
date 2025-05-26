@@ -979,3 +979,130 @@ header.sticky .nav-links a:hover {
     padding: 0.2rem 0.6rem;
   }
 }
+
+/* Certifications Section */
+#certifications {
+  padding: 5rem 2rem;
+  background-color: var(--pureWhite);
+  text-align: center;
+}
+
+#certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.certifications-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.certification-card {
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.certification-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.certification-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.certification-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.certification-details {
+  flex: 1;
+}
+
+.certification-card h3 {
+  font-size: 1.25rem;
+  color: var(--blackMain);
+  margin: 0 0 0.3rem 0;
+  font-weight: 600;
+}
+
+.issuer {
+  color: var(--blackMain);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
+}
+
+.certification-date {
+  color: var(--blackSub);
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.certification-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.certification-meta a {
+  color: var(--redStock);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.certification-meta a:hover {
+  color: var(--redHighlight);
+  text-decoration: underline;
+}
+
+.certification-description {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--grayStock);
+}
+
+.certification-description p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--blackSub);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certification-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .certification-logo {
+    margin: 0 auto;
+  }
+  
+  .certification-meta {
+    gap: 0.6rem;
+  }
+}

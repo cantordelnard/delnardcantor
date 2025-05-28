@@ -1,20 +1,25 @@
-// script.js
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
 
+// Toggle menu
 mobileMenu.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Add shadow to header on scroll
+// Close menu on link click
+navItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// Sticky header on scroll
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
+  header.classList.toggle('sticky', window.scrollY > 50);
 });
+
 
 // Initialize modal functionality
 function initCertificationModal() {

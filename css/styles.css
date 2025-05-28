@@ -146,42 +146,48 @@ header.sticky .nav-links a:hover {
   transition: all 0.3s ease;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-  .navbar {
-    margin: 1rem 1rem;
-    border-radius: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  }
-
-  .logo a {
-    font-size: 1.5rem;
-  }
-
+.navbar {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1.6rem;
+}
+  
   .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--blackMain);
-    gap: 0; /* Reset gap for mobile */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Below .menu-toggle */
+  background-color: var(--blackMain);
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+  flex-direction: column;
+}
 
   .nav-links.active {
-    display: flex;
+    transform: translateY(0%);
   }
 
   .nav-links li {
-    margin: 1rem 0;
-    text-align: center;
+    margin: 0.1rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    color: var(--white);
   }
 
   .menu-toggle {
-    display: flex;
-  }
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001; /* Put it above .nav-links (which is 999) */
+}
+
 }
 
 /* About Section */

@@ -72,3 +72,34 @@ function initCertificationModal() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initCertificationModal);
+
+// SEE MORE BUTTON FUNCTIONALITY
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.see-more-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const card = this.closest('.experience-card');
+      const hiddenItems = card.querySelectorAll('.hidden-item');
+      const isExpanded = this.classList.toggle('expanded');
+
+      hiddenItems.forEach(item => {
+        item.style.display = isExpanded ? 'list-item' : 'none';
+      });
+
+      this.textContent = isExpanded ? 'See Less' : 'See More';
+    });
+  });
+
+  // INTERSECTION OBSERVER FOR ANIMATION
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+});

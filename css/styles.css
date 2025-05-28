@@ -281,11 +281,8 @@ header.sticky .nav-links a:hover {
 #skills {
   padding: 6rem 2rem 7rem 2rem;
   text-align: center;
-  background-color: var(--pureWhite);
-  background: url('../images/whiteGrid.svg'); /* Add your image path here */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat;
+  background-color: var(--white);
+
 }
 
 #skills h2 {
@@ -327,7 +324,7 @@ header.sticky .nav-links a:hover {
 
 /* Experience Section */
 #experience {
-  padding: 5rem 2rem 0rem 2rem;
+  padding: 5rem 2rem;
   background-color: var(--white);
   text-align: center;
 }
@@ -338,90 +335,177 @@ header.sticky .nav-links a:hover {
   color: var(--blackMain);
 }
 
-.experience-timeline {
-  position: relative;
+.experience-container {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.experience-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0.1rem;
-  background-color: var(--redStock);
-}
-
-.experience-item {
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 2rem;
-}
-
-.experience-item::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  width: 16px;
-  height: 16px;
-  background-color: var(--redStock);
-  border: 2px solid var(--redStock);
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.experience-content {
+.experience-card {
   background-color: var(--pureWhite);
-  background: url('../images/whiteGrid.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border: 1px solid var(--grayStock);
   border-radius: 0.5rem;
-  padding: 3rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s ease-in-out 0.1s;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
 }
 
-.experience-content:hover {
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.1s ease-in-out 0.1s;
+.experience-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.experience-content h3 {
+.company-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.company-logo img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.experience-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
   color: var(--blackMain);
+  margin: 0 0 0.3rem 0;
+  font-weight: 600;
 }
 
-.experience-content .company {
+.company {
+  color: var(--blackMain);
   font-size: 1rem;
-  color: var(--blackMain);
-  margin-bottom: 0.2rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
 }
 
-.experience-content .experience-date {
-  font-size: 0.9rem;
-  color: var(--blackMain);
-  margin-bottom: 1rem;
-}
-
-.experience-content ul {
-  list-style: none;
-  
-}
-
-.experience-content li {
-  font-size: 0.9rem;
+.experience-date {
   color: var(--blackSub);
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
 }
 
-.lineHeightExp {
-  line-height: 1.5rem;
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--blackSub);
+  background-color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  border: 1px solid var(--grayStock);
+}
+
+.meta-item i {
+  color: var(--redStock);
+  font-size: 0.8rem;
+}
+
+.experience-description {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--grayStock);
+}
+
+.experience-description ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--blackSub);
+}
+
+.experience-description li:before {
+  content: "•";
+  color: var(--redStock);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.hidden-item {
+  display: none;
+}
+
+.see-more-btn {
+  background-color: transparent;
+  color: var(--redStock);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+  color: var(--redHighlight);
+  background-color: rgba(182, 96, 88, 0.1);
+}
+
+.see-more-btn::after {
+  content: '↓';
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.see-more-btn.expanded::after {
+  content: '↑';
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .company-logo {
+    margin: 0 auto;
+  }
+  
+  .experience-meta {
+    gap: 0.6rem;
+  }
+
+  .see-more-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Responsive Styles */
@@ -793,4 +877,354 @@ header.sticky .nav-links a:hover {
 
 #box .wrapper:hover{
   background-color: var(--redHighlight);
+}
+
+/* About Section */
+#aboutme {
+  padding: 7rem 3rem;
+  background-color: var(--blackMain);
+  text-align: center;
+}
+
+#aboutme h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--white);
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-description p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Education Section */
+#education {
+  padding: 5rem 2rem;
+  background-color: var(--pureWhite);
+  text-align: center;
+}
+
+#education h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.education-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-card {
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.education-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.school-logo {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.school-logo img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-card h3 {
+  font-size: 1.25rem;
+  color: var(--blackMain);
+  margin: 0 0 0.3rem 0;
+  font-weight: 600;
+}
+
+.institution {
+  color: var(--blackMain);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
+}
+
+.education-date {
+  color: var(--blackSub);
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--blackSub);
+  background-color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  border: 1px solid var(--grayStock);
+}
+
+.meta-item i {
+  color: var(--redStock);
+  font-size: 0.8rem;
+}
+
+.education-description {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--grayStock);
+}
+
+.education-description p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--blackSub);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .education-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .school-logo {
+    margin: 0 auto;
+  }
+  
+  .education-meta {
+    gap: 0.6rem;
+  }
+  
+  .meta-item {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Certifications Section */
+/* Certifications Section */
+#certifications {
+  padding: 5rem 2rem;
+  background-color: var(--pureWhite);
+  text-align: center;
+}
+
+#certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--blackMain);
+}
+
+.certifications-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certification-card {
+  background-color: var(--white);
+  border: 1px solid var(--grayStock);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+}
+
+.certificate-image-container {
+  position: relative;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid var(--grayStock);
+}
+
+.view-certificate-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--redStock);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-certificate-btn:hover {
+  background-color: var(--redHighlight);
+}
+
+.certification-header {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.certification-header h3 {
+  font-size: 1.25rem;
+  color: var(--blackMain);
+  margin: 0 0 0.3rem 0;
+}
+
+.certification-date {
+  color: var(--blackSub);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  overflow: auto;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: 2% auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+#modal-certificate-image {
+  max-height: 60vh;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--grayStock);
+  border-radius: 0.3rem;
+}
+
+.close-modal {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  color: var(--blackSub);
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: var(--redHighlight);
+}
+
+.modal-certificate-info {
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.modal-certificate-info h3 {
+  color: var(--blackMain);
+  margin-bottom: 0.5rem;
+}
+
+.issuer, .date {
+  color: var(--blackSub);
+  margin-bottom: 0.5rem;
+}
+
+.certificate-description {
+  margin: 1.5rem 0;
+  color: var(--blackSub);
+  line-height: 1.6;
+}
+
+.verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--redStock);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.verify-link:hover {
+  text-decoration: underline;
+  color: var(--redHighlight);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .certifications-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    margin: 5% auto;
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  #modal-certificate-image {
+    max-height: 50vh;
+  }
 }

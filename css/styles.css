@@ -328,6 +328,38 @@ header.sticky .nav-links a:hover {
   transition: all 0.1s ease-in-out 0.1s;
 }
 
+@media (max-width: 768px) {
+  #skills {
+    padding: 4rem 1.2rem;
+  }
+
+  #skills h2 {
+    font-size: 1.6rem;
+  }
+
+  .skill-box {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Tighter columns */
+    gap: 0.6rem;
+  }
+
+  .skill-box {
+    font-size: 0.8rem;
+    padding: 0.9rem;
+  }
+
+  #skills h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
 /* Experience Section */
 #experience {
   padding: 5rem 2rem;
@@ -360,9 +392,12 @@ header.sticky .nav-links a:hover {
 
 .experience-header {
   display: flex;
+  flex-wrap: wrap; /* allows wrap on small screens */
   gap: 1.5rem;
   margin-bottom: 1rem;
+  align-items: flex-start;
 }
+
 
 .company-logo {
   width: 80px;
@@ -493,42 +528,61 @@ header.sticky .nav-links a:hover {
   content: '↑';
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .experience-header {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
+@media (max-width: 480px) {
   .company-logo {
-    margin: 0 auto;
-  }
-  
-  .experience-meta {
-    gap: 0.6rem;
-  }
-
-  .see-more-btn {
-    width: 100%;
-    justify-content: center;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
   }
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-  .experience-timeline {
-    padding-left: 1rem;
+  #experience {
+    padding: 3rem 1rem;
   }
 
-  .experience-item {
-    padding-left: 1rem;
+  #experience h2 {
+    font-size: 1.5rem;
   }
 
-  .experience-item::before {
-    left: -6px;
-    width: 12px;
-    height: 12px;
+  .experience-card {
+    padding: 1.5rem;
   }
+
+  .experience-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .company {
+    font-size: 0.95rem;
+  }
+
+  .experience-date {
+    font-size: 0.85rem;
+  }
+
+  .meta-item {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .experience-description li {
+    font-size: 0.9rem;
+  }
+
+  .see-more-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--redStock);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
 }
 
 /* Projects Section */
@@ -546,7 +600,7 @@ header.sticky .nav-links a:hover {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -589,10 +643,12 @@ header.sticky .nav-links a:hover {
 
 .project-tools {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: center;
+  row-gap: 0.4rem;
+  column-gap: 0.5rem;
 }
+
 
 .tool-box {
   background-color: var(--white);
@@ -606,9 +662,38 @@ header.sticky .nav-links a:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* add side padding for mobile */
+}
+}
+
+@media (max-width: 600px) {
+  .project-image {
+    height: 150px;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-content h3 {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+  }
+
+  .tool-box {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
   }
 }
+
 
 /* Contact Section */
 #contact {
@@ -776,7 +861,7 @@ header.sticky .nav-links a:hover {
   padding: 10rem 2rem 0rem 2rem;
   background-color: var(--white);
   text-align: center;
-  height: 100vh;
+  height: 100dvh;
 }
 
 #maintenance h1 {
@@ -913,6 +998,28 @@ header.sticky .nav-links a:hover {
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  #aboutme {
+    padding: 4rem 1.5rem; /* Less padding on mobile */
+  }
+
+  #aboutme h2 {
+    font-size: 1.5rem; /* Scale down heading */
+  }
+
+  .about-description p {
+    font-size: 1rem; /* Smaller font for better fit */
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-description p {
+    font-size: 0.95rem;
+  }
+}
+
+
 /* Education Section */
 #education {
   padding: 5rem 2rem;
@@ -1029,26 +1136,67 @@ header.sticky .nav-links a:hover {
   margin: 0;
 }
 
-/* Responsive adjustments */
+/* Responsive Education Section */
 @media (max-width: 768px) {
+  .education-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
   .education-header {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
   }
-  
+
   .school-logo {
-    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
   }
-  
+
+  .school-logo img {
+    width: 80%;
+  }
+
+  .education-details {
+    flex: none;
+  }
+
+  .education-card {
+    padding: 1.5rem;
+  }
+
   .education-meta {
-    gap: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+}
+
+@media (max-width: 480px) {
+  .education-header {
+    gap: 0.8rem;
   }
-  
+
+  .education-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .institution,
+  .education-date,
   .meta-item {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .school-logo {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
   }
 }
+
 
 /* Certifications Section */
 /* Certifications Section */
@@ -1218,19 +1366,52 @@ body.modal-open {
   color: var(--redHighlight);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .certifications-container {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  #certifications {
+    padding: 3rem 1rem;
   }
-  
-  .modal-content {
-    margin: 5% auto;
-    width: 95%;
+
+  .certification-header {
     padding: 1rem;
   }
-  
-  #modal-certificate-image {
-    max-height: 50vh;
+
+  .certification-header h3 {
+    font-size: 1rem;
+  }
+
+  .certification-date {
+    font-size: 0.8rem;
+  }
+
+  .view-certificate-btn {
+    padding: 0.8rem 0.8rem;
+    font-size: 0.8rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+
+  .modal-certificate-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .certificate-description {
+    font-size: 0.9rem;
   }
 }
+
+/* Add this to your CSS file */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

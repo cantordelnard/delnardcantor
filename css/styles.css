@@ -113,7 +113,7 @@ header.sticky .nav-links a:hover {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 3rem; /* Adds space between each link */
+  gap: 2.5rem; /* Adds space between each link */
 }
 
 .nav-links li {
@@ -123,7 +123,7 @@ header.sticky .nav-links a:hover {
 .nav-links a {
   color: var(--blackMain);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease; /* Smooth transition */
 }
@@ -145,6 +145,14 @@ header.sticky .nav-links a:hover {
   margin: 4px 0;
   transition: all 0.3s ease;
 }
+
+.nav-links a.active {
+  color: var(--redHighlight) !important;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none; /* Ensures no default underline interferes */
+}
+
 
 @media (max-width: 768px) {
 .navbar {
@@ -192,7 +200,7 @@ header.sticky .nav-links a:hover {
 
 /* About Section */
 .about-section {
-  padding: 2.5rem 8rem;
+  padding: 2.5rem 2rem;
   background-color: var(--white);
   height: auto;
 }
@@ -767,14 +775,14 @@ header.sticky .nav-links a:hover {
 
 /* Contact Section */
 #contact {
-  padding: 6rem 2rem;
-  background-color: var(--pureWhite);
+  padding: 4rem 1rem;
+  background-color: var(--white);
   text-align: center;
 }
 
 #contact .section-title {
   font-size: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: var(--blackMain);
   position: relative;
   display: inline-block;
@@ -782,82 +790,83 @@ header.sticky .nav-links a:hover {
 
 .contact-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  align-items: flex-start;
+  padding: 0 1rem;
 }
 
 .contact-form {
-  flex: 1;
-  min-width: 300px;
+  width: 100%;
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .contact-info {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
 }
 
 .contact-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
   color: var(--blackMain);
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .contact-info h3::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
   height: 2px;
   background-color: var(--redStock);
 }
 
 .contact-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--blackSub);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .contact-methods {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .contact-item svg {
   color: var(--redStock);
-  flex-shrink: 0;
-  margin-top: 3px;
+  width: 20px;
+  height: 20px;
 }
 
 .contact-item h4 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--blackMain);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .contact-item a {
   color: var(--blackSub);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  word-break: break-all;
 }
 
 .contact-item a:hover {
@@ -868,7 +877,7 @@ header.sticky .nav-links a:hover {
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .hidden {
@@ -878,39 +887,41 @@ form {
 
 .name-group {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .input-group {
   position: relative;
-  flex: 1;
+  width: 100%;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
+  padding: 0.9rem;
+  font-size: 0.95rem;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: var(--white);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .input-group textarea {
-  min-height: 120px;
+  min-height: 100px;
   resize: vertical;
 }
 
 .input-group label {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.9rem;
+  left: 0.9rem;
   color: var(--blackSub);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   pointer-events: none;
   background: white;
-  padding: 0 5px;
+  padding: 0 4px;
+  font-size: 0.95rem;
 }
 
 .input-group input:focus,
@@ -924,9 +935,9 @@ form {
 .input-group input:not(:placeholder-shown) + label,
 .input-group textarea:focus + label,
 .input-group textarea:not(:placeholder-shown) + label {
-  top: -10px;
-  left: 10px;
-  font-size: 0.8rem;
+  top: -8px;
+  left: 8px;
+  font-size: 0.75rem;
   color: var(--redStock);
 }
 
@@ -937,63 +948,93 @@ form {
   gap: 0.5rem;
   background-color: var(--redStock);
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.5rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
+  transition: all 0.2s ease;
+  margin-top: 0.8rem;
 }
 
 .submit-btn:hover {
   background-color: var(--redHighlight);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(237, 28, 36, 0.2);
+  box-shadow: 0 3px 10px rgba(237, 28, 36, 0.2);
 }
 
 .submit-btn svg {
-  transition: transform 0.3s ease;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
 }
 
 .submit-btn:hover svg {
   transform: translateX(3px);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  #contact {
+    padding: 5rem 2rem;
+  }
+
+  #contact .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
   .contact-container {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 0 2rem;
   }
-  
+
+  .contact-form {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
   .contact-info {
-    text-align: center;
+    text-align: left;
+    padding: 2rem;
   }
-  
+
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+
   .contact-info h3::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
   }
-  
+
   .contact-item {
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
   }
-  
+
   .name-group {
-    flex-direction: column;
-    gap: 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Large Desktop Styles */
+@media (min-width: 1024px) {
   #contact {
-    padding: 4rem 1rem;
+    padding: 6rem 2rem;
   }
-  
-  .contact-form,
-  .contact-info {
-    padding: 1.5rem;
+
+  #contact .section-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-container {
+    gap: 4rem;
   }
 }
 

@@ -200,7 +200,7 @@ header.sticky .nav-links a:hover {
 
 /* About Section */
 .about-section {
-  padding: 2.5rem 7rem;
+  padding: 2.5rem 2rem;
   background-color: var(--white);
   height: auto;
 }
@@ -290,6 +290,8 @@ header.sticky .nav-links a:hover {
     max-width: 100%;
   }
 }
+
+
 
 /* Skills Section */
 #skills {
@@ -1597,3 +1599,72 @@ body.modal-open {
   transform: translateY(0);
 }
 
+/* Success Modal Styles */
+.modall {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modall.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modall-content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modall.show .modall-content {
+    transform: translateY(0);
+}
+
+.modall-checkmark {
+    color: var(--redStock);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modall h3 {
+    color: var(--blackMain);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modall p {
+    color: var(--blackSub);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.modall-close-btn {
+    background-color: var(--redStock);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.modall-close-btn:hover {
+    background-color: var(--redHighlight);
+}

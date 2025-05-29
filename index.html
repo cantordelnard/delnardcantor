@@ -578,7 +578,17 @@
         </div>
       </div>
     </div>
+    <div id="success-modall" class="modall">
+        <div class="modall-content">
+            <div class="modall-checkmark">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+            <button class="modall-close-btn">Close</button>
+        </div>
+    </div>
   </section>
+
+  
 
   <footer id="footer" class="footer">
     <div class="containerFooter fade-in">
@@ -604,6 +614,66 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[name="contact"]');
+    const successModall = document.getElementById('success-modall');
+    const closeBtn = document.querySelector('.modall-close-btn');
+    
+    // Handle form submission
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // For demo purposes, we'll show the modal immediately
+            // In production, Netlify will handle the submission
+            
+            // Prevent default form submission (we'll handle it with Netlify)
+            e.preventDefault();
+            
+            // Show the modal
+            successModall.classList.add('show');
+            
+            // Actually submit the form to Netlify
+            const formData = new FormData(form);
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            }).then(() => {
+                // Form submitted successfully
+                console.log('Form submitted to Netlify');
+            }).catch(error => {
+                console.error('Form submission error:', error);
+            });
+            
+            // Reset form
+            form.reset();
+        });
+    }
+    
+    // Close modal when clicking close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            successModall.classList.remove('show');
+        });
+    }
+    
+    // Close modal when clicking outside content
+    if (successModall) {
+        successModall.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                successModall.classList.remove('show');
+            }
+        });
+    }
+    
+    // Check for success parameter in URL (fallback if JS fails)
+    if (window.location.search.includes('success=true')) {
+        successModall.classList.add('show');
+        // Clean URL
+        history.replaceState(null, '', window.location.pathname);
+    }
+});
+</script>
 </body>
 
 </html>

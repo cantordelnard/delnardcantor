@@ -41,9 +41,9 @@ function initCertificationModal() {
       document.getElementById('modal-certificate-title').textContent = 
         this.getAttribute('data-title');
       document.getElementById('modal-certificate-issuer').textContent = 
-        "Issued by: " + this.getAttribute('data-issuer');
+        "Issued by " + this.getAttribute('data-issuer');
       document.getElementById('modal-certificate-date').textContent = 
-        "Issued: " + this.getAttribute('data-date');
+        "Issued " + this.getAttribute('data-date');
       document.getElementById('modal-certificate-description').textContent = 
         this.getAttribute('data-description');
       document.querySelector('.verify-link').href = 
@@ -103,3 +103,29 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    function activateNavLink() {
+      let scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 150; // Adjust offset as needed
+        const sectionId = current.getAttribute("id");
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${sectionId}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", activateNavLink);
+  });

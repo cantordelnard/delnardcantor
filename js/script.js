@@ -41,9 +41,9 @@ function initCertificationModal() {
       document.getElementById('modal-certificate-title').textContent = 
         this.getAttribute('data-title');
       document.getElementById('modal-certificate-issuer').textContent = 
-        "Issued by: " + this.getAttribute('data-issuer');
+        "Issued by " + this.getAttribute('data-issuer');
       document.getElementById('modal-certificate-date').textContent = 
-        "Issued: " + this.getAttribute('data-date');
+        "Issued " + this.getAttribute('data-date');
       document.getElementById('modal-certificate-description').textContent = 
         this.getAttribute('data-description');
       document.querySelector('.verify-link').href = 
